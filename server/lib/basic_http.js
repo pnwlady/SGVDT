@@ -8,10 +8,12 @@ module.exports = exports = (req, res, next) => {
     var namePassArr = namePassPT.split(':');
     req.auth = {
       username: namePassArr[0],
-      password: namePassArr[1]
+      password: namePassArr[1],
+      zipcode: namePassArr[2]
     };
     if (req.auth.username.length < 1) throw new Error('please enter a username');
     if (req.auth.password.length < 1) throw new Error('please enter password');
+    if (req.auth.zipcode.length < 1) throw new Error('please enter zip code');
   } catch (e) {
     console.log(e);
     return res.status(400).json({ msg: 'sorry, there was an error, please try again' });
