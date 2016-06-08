@@ -6,6 +6,9 @@ const lodash = require('lodash');
 const sgvdtApp = angular.module('sgvdtApp', [require('angular-route'),
 require('angular-ui-bootstrap'), 'uiGmapgoogle-maps']);
 
+// const sgvdtApp = angular.module('sgvdtApp', [require('angular-route'),
+// 'uiGmapgoogle-maps']);
+
 require('./services')(sgvdtApp);
 require('./offenses')(sgvdtApp);
 require('./maps')(sgvdtApp);

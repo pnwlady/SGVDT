@@ -1,4 +1,4 @@
-html, body, main,  #map_canvas {
+html, body, main, section, #map_canvas {
          height: 100%;
          width: 100%;
          margin: 0px;
@@ -17,11 +17,9 @@ html, body, main,  #map_canvas {
          bottom: 0;
          right: 0;
          left: 0;
+
      }
 
      p{
-       color:green;
+       color: yellow;
      }
-ol{
-  height: 200px;
-}
