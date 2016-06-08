@@ -3,7 +3,7 @@
 var baseUrl = require('../../config').baseUrl;
 
 module.exports = function(app) {
-  app.factory('sbAuth', ['$http', '$q', function($http, $q) {
+  app.factory('gAuth', ['$http', '$q', function($http, $q) {
     return {
       removeToken: function() {
         this.token = null;

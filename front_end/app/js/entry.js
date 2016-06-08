@@ -14,6 +14,7 @@ require('./offenses')(sgvdtApp);
 require('./maps')(sgvdtApp);
 require('./news')(sgvdtApp);
 require('./auth')(sgvdtApp);
+require('./services')(sgvdtApp);
 
 
 sgvdtApp.config(['$routeProvider', function($rp) {
@@ -28,23 +29,23 @@ $rp
     controller: 'MapController',
     controllerAs: 'xxctrl'
 })
-.when('signup', {
-    templateUrl: 'templates/auth/views/signup_view.html',
+.when('/signup', {
+    templateUrl: 'templates/auth/views/auth_view.html',
     controller: 'SignUpController',
-    controllerAs: 'signupctrl'
+    controllerAs: 'authctrl'
 })
-.when('signin', {
-    templateUrl: 'templates/auth/views/signin_view.html',
+.when('/signin', {
+    templateUrl: 'templates/auth/views/auth_view.html',
     controller: 'SignInController',
-    controllerAs: 'signinctrl',
-    resolve: {
-      user: function(SessionService) {
-        return SessionService.getCurrentUser();
-      }
-    }
+    controllerAs: 'authctrl',
+    // resolve: {
+    //   user: function(SessionService) {
+    //     return SessionService.getCurrentUser();
+    //   }
+    // }
 })
 .otherwise({
-    redirectTo: '/offenses'
+    redirectTo: '/map'
 });
 }]);
 

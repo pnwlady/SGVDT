@@ -1,5 +1,5 @@
 module.exports = function(app) {
-  app.controller('AuthController', ['cfAuth', 'cfHandleError',  '$location', function(auth, handleError, $location) {
+  app.controller('AuthController', ['gAuth', 'cfHandleError',  '$location', function(auth, handleError, $location) {
     this.username = '';
     this.errors = [];
     this.getUsername = function() {
