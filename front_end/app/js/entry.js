@@ -13,6 +13,7 @@ require('./services')(sgvdtApp);
 require('./offenses')(sgvdtApp);
 require('./maps')(sgvdtApp);
 require('./news')(sgvdtApp);
+require('./auth')(sgvdtApp);
 
 
 sgvdtApp.config(['$routeProvider', function($rp) {
@@ -26,6 +27,16 @@ $rp
     templateUrl: 'templates/maps/views/map_view.html',
     controller: 'MapController',
     controllerAs: 'xxctrl'
+})
+.when('signup', {
+    templateUrl: 'templates/auth/views/signup_view.html',
+    controller: 'signupController',
+    controllerAs: 'signupctrl'
+})
+.when('signin', {
+    templateUrl: 'templates/auth/views/signin_view.html',
+    controller: 'signinController',
+    controllerAs: 'signinctrl'
 })
 .otherwise({
     redirectTo: '/offenses'
