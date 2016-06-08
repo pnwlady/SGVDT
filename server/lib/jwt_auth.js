@@ -5,7 +5,7 @@ module.exports = exports = (req, res, next) => {
   jwt.verify(req.headers.token, process.env.APP_SECRET, (err, decoded) => {
     if (err) {
       return res.status(412).json({
-        msg: 'required condition not met'
+        msg: 'could not authenticate - token error'
       });
     }
     User.findOne({
@@ -13,12 +13,12 @@ module.exports = exports = (req, res, next) => {
     }, (err, data) => {
       if (err) {
         return res.status(412).json({
-          msg: 'required condition not met'
+          msg: 'could not authenticate - db error'
         });
       }
       if (!data) {
         return res.status(412).json({
-          msg: 'required condition not met'
+          msg: 'could not authenitcate - unable to locate user'
         });
       }
       req.user = data;
