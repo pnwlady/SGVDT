@@ -1,6 +1,6 @@
 var baseUrl = require('../../config').baseUrl;
 module.exports = function(app) {
-  app.controller('SignInController', ['$http', '$location', 'cfHandleError', function($http, $location, handleError) {
+  app.controller('SignInController', ['$http', '$location', 'HandleError', function($http, $location, handleError) {
     this.buttonText = 'Sign in to existing user';
     this.errors = [];
     this.authenticate = function(user) {
@@ -13,7 +13,7 @@ module.exports = function(app) {
       })
         .then((res) => {
           window.localStorage.token = res.data.token;
-          $location.path('/bears');
+          $location.path('/signin');
         }, handleError(this.errors, 'could not sign into user'));
     };
   }]);

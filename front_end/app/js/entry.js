@@ -2,7 +2,6 @@ const angular = require('angular');
 const angmaps = require('angular-google-maps');
 const logger = require('angular-simple-logger');
 const lodash = require('lodash');
-const route = requite('angular-route');
 
 const sgvdtApp = angular.module('sgvdtApp', [require('angular-route'),
 require('angular-ui-bootstrap'), 'uiGmapgoogle-maps']);
@@ -31,13 +30,18 @@ $rp
 })
 .when('signup', {
     templateUrl: 'templates/auth/views/signup_view.html',
-    controller: 'signupController',
+    controller: 'SignUpController',
     controllerAs: 'signupctrl'
 })
 .when('signin', {
     templateUrl: 'templates/auth/views/signin_view.html',
-    controller: 'signinController',
-    controllerAs: 'signinctrl'
+    controller: 'SignInController',
+    controllerAs: 'signinctrl',
+    resolve: {
+      user: function(SessionService) {
+        return SessionService.getCurrentUser();
+      }
+    }
 })
 .otherwise({
     redirectTo: '/offenses'
