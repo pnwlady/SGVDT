@@ -1,7 +1,7 @@
 const angular = require('angular');
-const angmaps = require('angular-google-maps');
-const logger = require('angular-simple-logger');
-const lodash = require('lodash');
+require('angular-google-maps');
+require('angular-simple-logger');
+require('lodash');
 
 const sgvdtApp = angular.module('sgvdtApp', [require('angular-route'),
 require('angular-ui-bootstrap'), 'uiGmapgoogle-maps']);
@@ -37,12 +37,7 @@ $rp
 .when('/signin', {
     templateUrl: 'templates/auth/views/auth_view.html',
     controller: 'SignInController',
-    controllerAs: 'authctrl',
-    // resolve: {
-    //   user: function(SessionService) {
-    //     return SessionService.getCurrentUser();
-    //   }
-    // }
+    controllerAs: 'authctrl'
 })
 .otherwise({
     redirectTo: '/map'

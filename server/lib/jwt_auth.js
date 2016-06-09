@@ -18,7 +18,7 @@ module.exports = exports = (req, res, next) => {
       }
       if (!data) {
         return res.status(412).json({
-          msg: 'could not authenitcate - unable to locate user'
+          msg: 'could not authenticate - unable to locate user'
         });
       }
       req.user = data;

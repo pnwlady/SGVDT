@@ -3,7 +3,7 @@
 var baseUrl = require('../../config').baseUrl;
 
 module.exports = function(app) {
-  app.factory('gAuth', ['$http', '$q', function($http, $q) {
+  app.factory('sgvAuth', ['$http', '$q', function($http, $q) {
     return {
       removeToken: function() {
         this.token = null;
@@ -26,7 +26,7 @@ module.exports = function(app) {
           if (this.username) return resolve(this.username);
           if (!this.getToken()) return reject(new Error('no auth token'));
 
-          $http.get(baseUrl + '/api/profile')
+          $http.get(baseUrl + '/api/users')
             .then((res) => {
               this.username = res.data.username;
               resolve(res.data.username);
