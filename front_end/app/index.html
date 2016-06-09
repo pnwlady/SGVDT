@@ -2,71 +2,81 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>SGVDT Client</title>
-  <!-- <link rel="stylesheet" href="bootstrap.css"> -->
-    <link rel="stylesheet" href="style.css">
+  <title>SGVDT</title>
+  <link rel="stylesheet" href="bootstrap.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body data-ng-app="sgvdtApp">
   <main>
+<<<<<<< HEAD
   <p>test text</p>
   <a href="#/signup">Sign Up</a>
   <a href="#/signin">Sign In</a>
 
+=======
+>>>>>>> 048ba433be92923ede83ab9b7acb2d89c00f1f5f
     <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			<!-- <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> -->
-				<!-- <div class="navbar-header">
+  	  <div class="row">
+  	  	<div class="col-md-12">
+  			  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  				  <div class="navbar-header">
+    					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+    						 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+    					</button> <a class="navbar-brand" href="#">Seattle Gun Violence Tracker</a>
+  				  </div>
+  				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  					<ul class="nav navbar-nav">
+  						<li class="active">
+  							<a href="#">Data</a>
+  						</li>
+  						<li>
+  							<a href="#">Resources</a>
+  						</li>
+  					</ul>
+  					<ul class="nav navbar-nav navbar-right">
+              <li>
+  							<a href="#">Sign In</a>
+  						</li>
+  					</ul>
+  				</div>
+  			</nav>
+  		</div>
+	  </div>
+    <div id="newsColumn" class="row">
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Seattle Gun Violence News</h3>
+          </div>
+          <div class="panel-body">
+            <section id="newsSection" data-ng-controller="NewsController as newsctrl">
+              <ul>
+                <news-list-item data-ng-repeat="article in newsctrl.articles" data-article="article"></news-list-item>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <!--map here -->
+        <section data-ng-view></section>
 
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-					</button> <a class="navbar-brand" href="#">Seattle Gun Violence Tracker</a>
-				</div> -->
+        <div class="row">
+          <div class="col-md-6">
+            <a class="twitter-timeline" href="https://twitter.com/search?q=seattle%20gun%20violence%20-Filter%3ARetweets" data-widget-id="739899467000741889">Tweets about seattle gun violence -Filter:Retweets</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          </div>
+          <div class="col-md-6">
+            <a class="twitter-timeline" href="https://twitter.com/SeattlePD" data-widget-id="739897279310499840">Tweets by @SeattlePD</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li class="active">
-							<a href="#">Data</a>
-						</li>
-						<li>
-							<a href="#">Resources</a>
-						</li>
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li class="dropdown">
-							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
-							<ul class="dropdown-menu">
-								<li>
-									<a href="#">Action</a>
-								</li>
-								<li>
-									<a href="#">Another action</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</nav>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-4">
-		</div>
-		<div class="col-md-8">
-			<div class="row">
-				<div class="col-md-6">
-				</div>
-				<div class="col-md-6">
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<section data-ng-view></section>
-  </main>
+</main>
 
 <script src="/bundle.js"></script>
-
 </body>
 </html>

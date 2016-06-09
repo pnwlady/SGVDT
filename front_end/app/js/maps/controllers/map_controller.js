@@ -20,6 +20,8 @@ module.exports = function(app) {
 
 var latitude = [];
 var longitude = [];
+var summary = [];
+var date = [];
 
  var createMarker = function(i, bounds, idKey) {
 
@@ -36,12 +38,21 @@ var longitude = [];
     var ret = {
                  latitude: latitude[i],
                  longitude: longitude[i],
-                 title: 'm' + i
+                 summary: summary[i],
+                 date: date[i],
+                 obs: 'crime happened.',
+                 title: 'm' + i,
+                 show: false
              };
 
         ret[idKey] = i;
          return ret;
      };
+
+     $scope.onClick = function(marker, eventName, model) {
+        // console.log('Clicked!');
+        model.show = !model.show;
+    };
 
 $scope.randomMarkers = [];
 
@@ -62,13 +73,13 @@ $scope.randomMarkers = [];
              for (var i = 0; i <= res.data.length; i++) {
                  latitude.push(res.data[i].latitude);
                  longitude.push(res.data[i].longitude);
+                 summary.push(res.data[i].summary);
+                 date.push(res.data[i].date);
                  markers.push(createMarker(i, $scope.map.bounds));
              }
                  });
               });
              $scope.randomMarkers = markers;
-            //  console.log(markers);
-            //  console.log(markers.length);
 
          }
      }, true);

@@ -1,25 +1,43 @@
-html, body, main, section, #map_canvas {
-         height: 100%;
-         width: 100%;
-         margin: 0px;
-     }
+#map_canvas {
+     height: 100%;
+     width: 100%;
+     margin: 0px;
+ }
+#map_canvas{
+   position: relative;
+   height: 500px;
+   width: 100%;
+}
+.angular-google-map-container {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 0;
 
-     #map_canvas{
-         position: relative;
-         height: 500px;
-         width:500px;
-     }
-
-
-     .angular-google-map-container {
-         position: absolute;
-         top: 0;
-         bottom: 0;
-         right: 0;
-         left: 0;
-
-     }
-
-     p{
-       color: yellow;
-     }
+}
+#newsColumn {
+  height: 100%;
+  padding-top: 80px;
+}
+#newsArticle {
+  padding-bottom: 25px;
+}
+#newsArticle p {
+  padding-bottom: 10px;
+  border-bottom: solid #AFB2B3;
+}
+#newsArticle img {
+  width: 100%;
+  padding-bottom: 15px;
+}
+html {
+  height: 100%;
+}
+body {
+  background-color: #AFB2B3;
+  height: 100%;
+}
+main {
+  height: 100%;
+}

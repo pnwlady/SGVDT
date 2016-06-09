@@ -1,10 +1,62 @@
-
+<div data-ng-controller="OffenseController as offensectrl">
   <ul>
     <li data-ng-repeat="error in offensectrl.errors">{{error.message}}<button data-ng-click="offensectrl.errors.splice(offensectrl.errors.indexOf(error), 1)">Acknowledge</li>
   </ul>
 
+  <form class="form-search pull-left">
+<div class="input-append">
 
-<ol id = "offenseList">
+<input type="text" ng-model="filterText" class="span2 search-query" placeholder="Filter current page">
+
+<!-- <button ng-click="filterText = null" class="btn">Clear Filter</button> -->
+</div>
+
+</form>
+
+
+<table class="table table-striped table-bordered">
+   <thead>
+    <tr>
+
+     <th class="span1 sortable" ng-class="sortClass('comments')" ng-click="setSort('comments')">Offense</th>
+     <th class="span1">Precinct</th>
+     <th>Date</th>
+     <th class="span1">Year</th>
+    </tr>
+   </thead>
+   <tbody>
+
+    <tr ng-repeat="offense in offenseArr | filter:filterText">
+
+
+     <td class="text-center">{{offense.summary}}</td>
+
+     <td class="text-center" ng-class="issue.year">{{offense.zone}}</td>
+     <td class="text-center">
+
+       <a ng-click="setCurrentIssue(offense.year)">{{offense.date}}</a>
+
+     </td>
+     <td>{{offense.year}}</td>
+    </tr>
+   </tbody>
+   </table>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <ol id = "offenseList">
 <offense-list-item data-ng-repeat="offenses in offensectrl.offenses" data-offense="offenses"> </offense-list-item>
 
-</ol>
+</ol> -->

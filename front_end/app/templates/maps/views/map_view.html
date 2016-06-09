@@ -1,14 +1,22 @@
-<div id="map_canvas" >
-  <p>map goes here</p>
+<!-- <div id="map_canvas" >
+  <p>map goes here</p> -->
 
-
+<!--
    <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable = "true" options = "options" bounds = "map.bounds">
 
      <ui-gmap-markers models="randomMarkers" coords="'self'" icon="'icon'">
          </ui-gmap-markers>
 
    </ui-gmap-google-map>
+</div> -->
+
+
+<div id="map_canvas">
+    <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options" bounds="map.bounds">
+        <ui-gmap-markers models="randomMarkers" coords="'self'" icon="'icon'" click="onClick">
+            <ui-gmap-windows show="show">
+                <div ng-non-bindable>{{summary}}, {{date}}</div>
+            </ui-gmap-windows>
+        </ui-gmap-markers>
+    </ui-gmap-google-map>
 </div>
-
-
-<!-- Latitude:  {{offense.latitude}}, Longitude: {{offense.longitude}} -->
