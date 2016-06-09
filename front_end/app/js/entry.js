@@ -30,7 +30,6 @@ $rp
     controller: 'MapController',
     controllerAs: 'xxctrl'
 })
-<<<<<<< HEAD
 .when('/signup', {
     templateUrl: 'templates/auth/views/auth_view.html',
     controller: 'SignUpController',
@@ -40,7 +39,6 @@ $rp
     templateUrl: 'templates/auth/views/auth_view.html',
     controller: 'SignInController',
     controllerAs: 'authctrl'
-=======
 .when('/news', {
     templateUrl: 'templates/news/views/news_view.html',
     controller: 'NewsController',
