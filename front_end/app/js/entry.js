@@ -15,6 +15,7 @@ require('./maps')(sgvdtApp);
 require('./news')(sgvdtApp);
 require('./auth')(sgvdtApp);
 require('./services')(sgvdtApp);
+require('./twitter')(sgvdtApp);
 
 
 sgvdtApp.config(['$routeProvider', function($rp) {
@@ -49,7 +50,6 @@ $rp
   templateUrl: 'templates/twitter/views/twitter_view.html',
   controller: 'TwitterController',
   controllerAs: 'newsctrl'
->>>>>>> 048ba433be92923ede83ab9b7acb2d89c00f1f5f
 })
 .otherwise({
     redirectTo: '/map'
