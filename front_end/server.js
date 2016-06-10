@@ -1,5 +1,5 @@
 const express = require('express');
-var port = process.env.port
+var port = process.env.PORT;
 
 express().use(express.static(__dirname + '/build'))
 .get('*', function(req, res) {
