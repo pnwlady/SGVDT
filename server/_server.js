@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const offensesRouter = require(__dirname + '/router/offenses_router');
 const userRouter = require(__dirname + '/router/user_router');
 const newsRouter = require(__dirname + '/router/news_router');
-var port = process.env.PORT || CONFIG.port;
 
 app.use(function(req, res, next) {
 res.header('Access-Control-Allow-Origin', '*');
