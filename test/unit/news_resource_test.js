@@ -3,6 +3,7 @@ const angular = require('angular');
 
 describe('test the newsResource', function() {
   var $httpBackend;
+  // var newsctrl;
 
   beforeEach(angular.mock.module('sgvdtApp'));
   beforeEach(angular.mock.inject((_$httpBackend_) => {
@@ -16,7 +17,11 @@ describe('test the newsResource', function() {
 
   it('should make a GET request to /api/news to retrieve news articles from API',
     angular.mock.inject(function(newsResource) {
-      $httpBackend.expectGET('http://localhost:3000/api/news').respond(200, responseText);
+
+      $httpBackend.expectGET('http://localhost:3000/api/news');
+
+
+      respond(200, [{ foo: 'bar' }]);
 
     var articlesArray = [];
     var errorsArray = [];
@@ -27,8 +32,10 @@ describe('test the newsResource', function() {
     $httpBackend.flush();
     expect(true).toEqual(true);
     // expect(articlesArray.length).toBe(1);
-    // expect(articlesArray[0].article).toBe('someNews');
+    expect(articlesArray[0].article).toBe('bar');
     // expect(errorsArray.length).toBe(0);
 
     }));
+
+
 });
