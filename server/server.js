@@ -3,7 +3,7 @@ if (!process.env.APP_SECRET) {
 }
 var setupProductionDb = require(__dirname + '/lib/set_interval');
 const server = require(__dirname + '/_server');
-const port = 3000;
+const port = process.env.PORT;
 const mongooseConnect = process.env.MONGODB_URI || 'mongodb://localhost/sgvdt_appDB';
 
 server(port, mongooseConnect, () => {

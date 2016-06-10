@@ -1,1 +1,1 @@
-web: bundle exec node server -p $PORT
+web: node server

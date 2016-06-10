@@ -11,7 +11,7 @@ res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, token')
 res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
 next();
 });
-
+app.use('', express.static(__dirname + '/../front_end/app/build'));
 app.use('/api', newsRouter);
 app.use('/api', offensesRouter);
 app.use('/', userRouter);
