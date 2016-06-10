@@ -26,7 +26,7 @@ describe('SignIn Test', () => {
     expect(typeof signInController.authenticate).toBe('function');
   });
 
-  it('It should login a user', () => {
+  it('It should signin a user', () => {
     $httpBackend.expectGET('api/signin')
     .respond(200, { token: 'testResponse' });
     signInController.user = { username: '', password: '' };
