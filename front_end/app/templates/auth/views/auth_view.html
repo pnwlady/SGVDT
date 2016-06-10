@@ -5,6 +5,8 @@
     <a data-ng-href="/#/{{authctrl.signup ? 'signin':'signup'}}">{{(authctrl.signup ? 'Sign in':'Sign up')}}</a>
     <label for="username">Username:</label>
     <input type="text" required data-ng-model="authctrl.user.username">
+    <label for="zipcode">Zipcode:</label>
+    <input type="text" required data-ng-model="authctrl.user.zipcode">
 
     <label for="password">Password:</label>
     <input type="password" required data-ng-model="authctrl.user.password">
