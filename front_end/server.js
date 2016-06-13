@@ -1,5 +1,9 @@
-const express = require('express');
-express().use(express.static(__dirname + '/build'))
-.get('*', function(req, res) {
-  res.redirect('/#' + req.url);
-}).listen(5000, () => console.log('server up on 5000'));
+// const express = require('express');
+// var port = process.env.PORT;
+//
+// express().use(express.static(__dirname + '/build'))
+// .get('*', function(req, res) {
+//   res.redirect('/#' + req.url);
+// }).listen(port, () => console.log('server up on ' + port));
+//
+// remove baseURL '/api'
