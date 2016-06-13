@@ -7,7 +7,7 @@ const maps = require('gulp-sourcemaps');
 
 var paths = {
   server: ['lib/**/*.js', 'model/**/*.js', 'server/**/*.js', 'index.js', 'gulpfile.js'],
-  client: ['front_end/app/**/*.js', 'front_end/gulpfile.js', 'front_end/server.js'],
+  client: ['front_end/app/**/*.js', 'front_end/gulpfile.js'],
   test: ['test/**/*test.js']
 };
 
