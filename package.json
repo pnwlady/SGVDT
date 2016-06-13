@@ -2,9 +2,17 @@
   "name": "sgvdt",
   "version": "1.0.0",
   "description": "Seattle Gun Violence Data Tracker",
+  "version": "1.1.0",
+  "engines": {
+    "node": "4.3.1"
+  },
   "main": "index.js",
   "directories": {
     "test": "test"
+  },
+  "scripts": {
+  "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
+  "heroku-postbuild": "echo This runs afterwards."
   },
   "scripts": {
     "start": "node index.js",
@@ -22,10 +30,6 @@
     {
       "name": "Maria Romero",
       "email": "mariaromero18e@gmail.com"
-    },
-    {
-      "name": "Kristopher Skelton",
-      "email": "kmskelton@outlook.com"
     },
     {
       "name": "Shelly Yusuf",
