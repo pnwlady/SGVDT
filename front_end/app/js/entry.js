@@ -1,7 +1,7 @@
 const angular = require('angular');
-const angmaps = require('angular-google-maps');
-const logger = require('angular-simple-logger');
-const lodash = require('lodash');
+require('angular-google-maps');
+require('angular-simple-logger');
+require('lodash');
 
 const sgvdtApp = angular.module('sgvdtApp', [require('angular-route'),
 require('angular-ui-bootstrap'), require('angular-resource'), 'uiGmapgoogle-maps']);

@@ -8,7 +8,7 @@ const mongooseConnect = process.env.MONGO_URI = 'mongodb://localhost/daily_test_
 
 process.env.APP_SECRET = 'hiLogan';
 const port = process.env.PORT = 5555;
-const app = require(__dirname + '/../server/_server');
+const app = require(__dirname + '/../server/server');
 var server;
 
 const Offense = require(__dirname + '/../server/model/offense');

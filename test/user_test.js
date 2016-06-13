@@ -9,7 +9,7 @@ const mongooseConnect = process.env.MONGO_URI = 'mongodb://localhost/user_test_d
 
 process.env.APP_SECRET = 'hiLogan';
 const port = process.env.PORT = 5555;
-var app = require(__dirname + '/../server/_server');
+var app = require(__dirname + '/../server/server');
 var server;
 
 const User = require(__dirname + '/../server/model/user');

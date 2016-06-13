@@ -9,7 +9,7 @@ var mongooseConnect = process.env.MONGO_URI = 'mongodb://localhost/offense_test_
 
 process.env.APP_SECRET = 'hiLogan';
 const port = process.env.PORT = 5555;
-var app = require(__dirname + '/../server/_server');
+var app = require(__dirname + '/../server/server');
 var server;
 
 describe('the GET method on /api/news route', function() {

@@ -1,22 +1,20 @@
-const angular = require('angular');
-const angmaps = require('angular-google-maps');
-const lodash = require('lodash');
+require('angular');
+require('angular-google-maps');
+require('lodash');
 
 var baseUrl = require('../../config').baseUrl;
-
 
 module.exports = function(app) {
   app.controller('MapController', ['sgvdtResource', '$http', '$scope', function( Resource, $http, $scope) {
 
       $scope.map = { center: {
-           latitude: 47.618217, longitude: -122.351832
+        latitude: 47.618217, longitude: -122.351832
        }, zoom: 12,
    bounds: {} };
 
     $scope.options = {
-         scrollwheel: false
+      scrollwheel: false
      };
-
 
 var latitude = [];
 var longitude = [];
@@ -25,24 +23,23 @@ var date = [];
 
  var createMarker = function(i, bounds, idKey) {
 
-     var lat_min = bounds.southwest.latitude,
+    var lat_min = bounds.southwest.latitude,
         lat_range = bounds.northeast.latitude - lat_min,
         lng_min = bounds.southwest.longitude,
         lng_range = bounds.northeast.longitude - lng_min;
 
      if (idKey == null) {
-         idKey = 'id';
+        idKey = 'id';
      }
 
-
     var ret = {
-                 latitude: latitude[i],
-                 longitude: longitude[i],
-                 summary: summary[i],
-                 date: date[i],
-                 obs: 'crime happened.',
-                 title: 'm' + i,
-                 show: false
+                latitude: latitude[i],
+                longitude: longitude[i],
+                summary: summary[i],
+                date: date[i],
+                obs: 'crime happened.',
+                title: 'm' + i,
+                show: false
              };
 
         ret[idKey] = i;
@@ -50,7 +47,6 @@ var date = [];
      };
 
      $scope.onClick = function(marker, eventName, model) {
-        // console.log('Clicked!');
         model.show = !model.show;
     };
 
@@ -80,9 +76,7 @@ $scope.randomMarkers = [];
                  });
               });
              $scope.randomMarkers = markers;
-
          }
      }, true);
-
   }]);
 };

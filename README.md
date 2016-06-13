@@ -1,6 +1,6 @@
 # Seattle Gun Violence Data Tracker
 
-A [Code Fellows](https://www.codefellows.org/) project by [Heidi Laursen](https://github.com/pnwlady/SGVDT) [Maria Romero](https://github.com/MiaRomero/SGVDT) [Kristopher Skelton](https://github.com/KMSkelton/SGVDT) [Shelly Yusuf](https://github.com/CWShelly/SGVDT)
+A [Code Fellows](https://www.codefellows.org/) project by [Heidi Laursen](https://github.com/pnwlady/SGVDT) [Maria Romero](https://github.com/MiaRomero/SGVDT)  [Shelly Yusuf](https://github.com/CWShelly/SGVDT)
 
 ### Purpose
 This tool is designed to allow for granular searching of gun violence data from the data.seattle.gov database.
