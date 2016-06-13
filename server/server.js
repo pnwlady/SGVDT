@@ -14,12 +14,15 @@ var setupProductionDb = require(__dirname + '/lib/set_interval');
 
 const mongooseConnect = process.env.MONGODB_URI || 'mongodb://localhost/sgvdt_appDB';
 
-server(port, mongooseConnect, () => {
-  console.log('server up on ' + port);
-
+var setUp = function(port, mongooseConnect, callBack) {
+  mongoose.connect(mongooseConnect);
   setupProductionDb();
-});
+  return app.listen(port, callBack);
+};
 
+setUp(port, mongooseConnect, () => {
+  console.log('')
+})
 app.use(express.static(__dirname + '/build'))
   .get('*', function(req, res) {
     res.redirect('/#' + req.url);
@@ -39,7 +42,4 @@ app.use('/*', (req, res) => {
   res.status(404).send('not found');
 });
 
-module.exports = exports = function(port, mongooseConnect, callBack) {
-  mongoose.connect(mongooseConnect);
-  return app.listen(port, callBack);
-};
+module.exports = exports = app.listen(port, () => console.log('server up on port: ' + port));
