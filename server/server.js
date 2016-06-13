@@ -5,7 +5,7 @@ if (!process.env.APP_SECRET) {
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 5555;
 
 const offensesRouter = require(__dirname + '/router/offenses_router');
 const userRouter = require(__dirname + '/router/user_router');
