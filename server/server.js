@@ -42,4 +42,9 @@ app.use('/*', (req, res) => {
   res.status(404).send('not found');
 });
 
+
+app.get('/signup', (req, res) => {
+  res.redirect('/#' + req.url);
+});
+
 module.exports = exports = app.listen(port, () => console.log('server up on port: ' + port));
