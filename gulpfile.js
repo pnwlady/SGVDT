@@ -49,5 +49,3 @@ gulp.task('karma', ['webpack:test'], (done) => {
     configFile: __dirname + '/karma.conf.js'
   }, done).start();
 });
-
-// gulp.task('default', ['lint:test', 'lint:nontest', 'mocha']);

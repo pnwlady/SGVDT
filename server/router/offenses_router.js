@@ -8,13 +8,4 @@ offenseRouter.get(/offense/, (req, res) => {
     if (err) return eH(err, res);
     res.status(200).json(data);
   });
-
-  // offenseRouter.get('/offenses', (req, res) => {
-  //     Offense.find(null, (err, data) => {
-  //         if (err) return eH(err, res);
-  //         res.status(200).json(data);
-  //     });
-  // });
-
-
- });
+});

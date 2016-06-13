@@ -26,8 +26,12 @@ module.exports = function(app) {
             var day = date.substr(6, 2);
             date = month + '-' + day + '-' + year;
             this.data[j].source.enriched.url.publicationDate.date = date;
-            if (this.data[j].source.enriched.url.image == 'http://cdn2-b.examiner.com/sites/default/files/styles/hero_curated_large/hash/2d/c5/2dc5a83e70de9c2871246c4b84bbfd41.jpg?itok=sPDSQNZ5') {
-                this.data[j].source.enriched.url.image = 'http://cdn2-b.examiner.com/sites/default/files/styles/image_content_width/hash/09/a4/09a4544d1786b6ac7d4b7b5a39442f38.JPG?itok=lKD_1hdy';
+            if (this.data[j].source.enriched.url.image ===
+                'http://cdn2-b.examiner.com/sites/default/files/styles/' +
+                'hero_curated_large/hash/2d/c5/2dc5a83e70de9c2871246c4b84bbfd41.jpg?itok=sPDSQNZ5') {
+                this.data[j].source.enriched.url.image =
+                'http://cdn2-b.examiner.com/sites/default/files/styles/' +
+                'image_content_width/hash/09/a4/09a4544d1786b6ac7d4b7b5a39442f38.JPG?itok=lKD_1hdy';
             }
           }
         }, handleError(this.errors, this.options.errMessages.getAll || 'could not fetch resource'));
