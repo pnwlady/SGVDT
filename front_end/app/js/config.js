@@ -1,3 +1,5 @@
+const port = process.env.PORT || 5555;
+
 module.exports = {
-    baseUrl: ''
+    baseUrl: 'localhost:' + port;
 };

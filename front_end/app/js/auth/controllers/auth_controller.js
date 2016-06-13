@@ -1,3 +1,5 @@
+// var baseUrl = require('../../config').baseUrl;
+
 module.exports = function(app) {
   app.controller('AuthController', ['sgvAuth', 'sgvHandleError',  '$location', function(auth, handleError, $location) {
     this.username = '';

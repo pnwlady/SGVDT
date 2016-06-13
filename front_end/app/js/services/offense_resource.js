@@ -1,8 +1,8 @@
-// var baseUrl = require('../../config').baseUrl;
+var baseUrl = require('../../config').baseUrl;
 
 module.exports = exports = function(app) {
   app.factory('offenseResource', function($resource) {
-    var resource = $resource('http://localhost:3000/api/offenses');
+    var resource = $resource(baseUrl + '/api/offenses');
     resource.getDataList = function() {
       return this.query();
     };
