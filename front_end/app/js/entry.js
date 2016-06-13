@@ -1,7 +1,7 @@
 const angular = require('angular');
-const angmaps = require('angular-google-maps');
-const logger = require('angular-simple-logger');
-const lodash = require('lodash');
+require('angular-google-maps');
+require('angular-simple-logger');
+require('lodash');
 
 const sgvdtApp = angular.module('sgvdtApp', [require('angular-route'),
 require('angular-ui-bootstrap'), require('angular-resource'), 'uiGmapgoogle-maps']);
@@ -17,8 +17,6 @@ sgvdtApp.config(['$routeProvider', function($rp) {
   $rp
   .when('/offenses', {
       templateUrl: 'templates/offenses/views/offense_view.html'
-      // controller: 'OffenseController',
-      // controllerAs: 'offensectrl'
   })
   .when('/map', {
       templateUrl: 'templates/maps/views/map_view.html',
@@ -46,6 +44,6 @@ sgvdtApp.config(['$routeProvider', function($rp) {
     controllerAs: 'newsctrl'
   })
   .otherwise({
-      redirectTo: '/offenses'
+      redirectTo: '/map'
   });
 }]);

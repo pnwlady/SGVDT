@@ -10,7 +10,7 @@ module.exports = function(app) {
     $scope.setCurrentData = function(year) {
       Resource.getIssue({
           year: year
-      }, function(data) {
+      }, (data) => {
           $scope.offenseArr = data;
       });
     };
